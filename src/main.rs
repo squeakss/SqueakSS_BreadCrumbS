@@ -192,13 +192,13 @@ async fn get_ip_info(ip: &str) -> Result<IpInfo, Error> {
 // Main function to search Talos and display the results
 async fn search_talos(query: &str) -> WebDriverResult<HashMap<String, HashMap<String, String>>> {
     let mut caps = DesiredCapabilities::chrome();
-    let profile_path = ""; // Update this to the path of your profile
-    caps.add_chrome_arg(&format!("--user-data-dir={}", profile_path))?;
+    //let profile_path = ""; // Update this to the path of your profile
+    //caps.add_chrome_arg(&format!("--user-data-dir={}", profile_path))?;
     caps.add_chrome_arg("--homepage=about:blank")?;
     caps.add_chrome_arg("--no-sandbox")?;
     caps.add_chrome_arg("--disable-dev-shm-usage")?;
 
-    let driver = WebDriver::new("http://localhost:9515", caps).await?;
+    let driver = WebDriver::new("http://localhost:57077", caps).await?;
     let url = format!("https://talosintelligence.com/reputation_center/lookup?search={}", query);
     driver.get(&url).await?;
 
