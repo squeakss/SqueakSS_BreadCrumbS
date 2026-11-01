@@ -1,0 +1,19 @@
+# Copy this file and pass --config path/to/config.toml.
+# Provider lookups are opt-in. Empty providers means no network requests.
+output_dir = "breadcrumbss-results"
+tshark = "tshark"
+providers = []
+dry_run = false
+include_nonpublic = false
+cache_hours = 24
+concurrency = 2
+rdap_rate = 1.0
+stable_seconds = 5
+poll_seconds = 2
+
+# To enable no-key RDAP registration lookups:
+# providers = ["rdap"]
+# VirusTotal requires either --approve-ip for each exact public address or
+# --approve-all-public to enrich future public IPs automatically.
+# Preview first with --preview. Example: providers = ["virustotal"]
+

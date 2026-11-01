@@ -1,1 +1,15 @@
 /target
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.tmp/
+results/
+.secrets/
+
+config.toml
+*.pcap
+*.pcapng
+*.cap
+ip-connection-matches.csv
+ip-connection-watcher-errors.txt
